@@ -9,8 +9,8 @@ public class Main {
     public static void main(String[] args) {
 
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        Vehicle vehicle = context.getBean(Vehicle.class);
         Person person = context.getBean(Person.class);
+        Vehicle vehicle = context.getBean(Vehicle.class);
         System.out.println("The person: " + person.getName() + " uses " + person.getVehicle() + " vehicle");
     }
 }
