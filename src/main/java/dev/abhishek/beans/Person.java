@@ -1,20 +1,17 @@
 package dev.abhishek.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Person {
     private String name = "Lucy";
-
-    // field injection
-    // @Autowired
     private final Vehicle vehicle;
 
-    //constructor injection.
-    // this does not need any annotation
-    public Person(Vehicle vehicle){
-        this.vehicle = vehicle;
+    @Autowired
+    public Person(Vehicle vehicle1) {
+        this.vehicle = vehicle1;
     }
 
     public String getName() {
@@ -24,13 +21,6 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
-
-
-    // Setter injection
-//    @Autowired
-//    public void setVehicle(Vehicle vehicle) {
-//        this.vehicle = vehicle;
-//    }
 
     public String getVehicle() {
         return vehicle.getName();
