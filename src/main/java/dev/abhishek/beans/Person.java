@@ -7,8 +7,15 @@ import org.springframework.stereotype.Component;
 public class Person {
     private String name = "Lucy";
 
-    @Autowired
-    private Vehicle vehicle;
+    // field injection
+    // @Autowired
+    private final Vehicle vehicle;
+
+    //constructor injection.
+    // this does not need any annotation
+    public Person(Vehicle vehicle){
+        this.vehicle = vehicle;
+    }
 
     public String getName() {
         return name;
@@ -18,9 +25,12 @@ public class Person {
         this.name = name;
     }
 
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
+
+    // Setter injection
+//    @Autowired
+//    public void setVehicle(Vehicle vehicle) {
+//        this.vehicle = vehicle;
+//    }
 
     public String getVehicle() {
         return vehicle.getName();
