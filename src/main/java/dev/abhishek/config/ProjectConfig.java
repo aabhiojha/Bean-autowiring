@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Primary;
 @ComponentScan(basePackages = "dev.abhishek.beans")
 public class ProjectConfig {
 
-//    @Primary
+    @Primary
     @Bean
     public Vehicle vehicle1() {
         Vehicle vehicle = new Vehicle();
